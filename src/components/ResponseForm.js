@@ -5,22 +5,23 @@ function ResponseForm(props){
   
   function handleNewResponseFormSubmission(event) {
     event.preventDefault();
-    props.onNewResponseCreation({
-      selectedResponse: event.target.selectedSurvey.value,
+    props.onSubmitResponse({
+
+      respondingTo: event.target.respondingTo.value,
       response1: event.target.response1.value,
       response2: event.target.response2.value,
       response3: event.target.response3.value,
+      
     });
   }
 
   return (
     <React.Fragment>
       <form onSubmit={handleNewResponseFormSubmission}>
-        <select name='selectedSurvey'>
-          {props.surveyList.map((survey, index) =>
-            <option value={survey.id} key={index}>{survey.title}</option>
-          )}
-        </select>
+        <input
+          type='text'
+          name='respondingTo'
+          placeholder='respondingTo' />
         <input
           type='text'
           name='response1'
@@ -40,7 +41,7 @@ function ResponseForm(props){
 }
 
 ResponseForm.propTypes = {
-  handleNewResponseFormSubmission: PropTypes.func,
+  onSubmitResponse: PropTypes.func,
   // buttonText: PropTypes.string
 }
 

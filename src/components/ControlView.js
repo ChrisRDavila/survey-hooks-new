@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import SurveyList from "./SurveyList";
 import NewSurveyForm from "./NewSurveyForm";
 import SurveyDetail from "./SurveyDetails"
 import EditSurveyForm from "./EditSurveyForm";
 import ResponseForm from "./ResponseForm";
-// import Dashboard from "./Dashboard";
-// import db from '../firebase';
-// import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
+import Dashboard from "./Dashboard";
+import db from '../firebase';
+import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
 
 function ControlView() {
 
@@ -15,34 +15,34 @@ function ControlView() {
   const [ selectedSurvey, setSelectedSurvey ] = useState(null);
   const [ editing, setEditing ] = useState(false);
   const [ respond, setRespond] = useState(false); 
-  // const [ dashboardDisplay, setDashboardDisplay ] = useState(false);
+  const [ dashboardDisplay, setDashboardDisplay ] = useState(false);
   const [ selectedResponse, setSelectedResponse ] = useState(null);
   const [ mainResponseList, setMainResponseList ] = useState([]);
-  // const [ error, setError ] = useState(null);
+  const [ error, setError ] = useState(null);
 
-  // useEffect(() => { 
-  //   const unSubscribe = onSnapshot(
-  //     collection(db, "tickets"), 
-  //     (collectionSnapshot) => {
-  //      const surveys = [];
-  //      collectionSnapshot.forEach((doc) => {
-  //       surveys.push({
-  //         title: doc.data().title,
-  //         question1: doc.data().question1,
-  //         question2: doc.data().question2,
-  //         question3: doc.data().question3,
-  //         id: doc.id
-  //       });
-  //      });
-  //      setMainSurveyList(surveys);
-  //     }, 
-  //     (error) => {
-  //       setError(error.message);
-  //     }
-  //   );
+  useEffect(() => { 
+    const unSubscribe = onSnapshot(
+      collection(db, "tickets"), 
+      (collectionSnapshot) => {
+        const surveys = [];
+        collectionSnapshot.forEach((doc) => {
+        surveys.push({
+          title: doc.data().title,
+          question1: doc.data().question1,
+          question2: doc.data().question2,
+          question3: doc.data().question3,
+          id: doc.id
+        });
+      });
+      setMainSurveyList(surveys);
+      }, 
+      (error) => {
+        setError(error.message);
+      }
+    );
 
-  //   return () => unSubscribe();
-  // }, []);
+    return () => unSubscribe();
+  }, []);
 
   const handleClick = () => {
     if (selectedSurvey != null) {
@@ -51,20 +51,14 @@ function ControlView() {
       setEditing(false);
       setRespond(false);
       setSelectedResponse(null);
+      setDashboardDisplay(false);
     } else {
         setFormVisibleOnPage(!formVisibleOnPage);
       }
     }
 
-    // const handleDashBoardClick = () => {  
-    //   setDashboardDisplay(true);
-    // this will show us all our surveys and responses
-    // }
-  
-
-  const handleDeletingSurvey = (id) => {
-    const newMainSurveyList = mainSurveyList.filter((survey) => survey.id !== id);
-    setMainSurveyList(newMainSurveyList);
+  const handleDeletingSurvey = async (id) => {
+    await deleteDoc(doc(db, "surveys", id));
     setSelectedSurvey(null);
   }
 
@@ -72,11 +66,9 @@ function ControlView() {
     setEditing(true);
   }
 
-  const handleEditingSurveyInList = (surveyToEdit) => {
-    const editedMainSurveyList = mainSurveyList
-    .filter((survey) => survey.id !== selectedSurvey.id)
-    .concat(surveyToEdit);
-    setMainSurveyList(editedMainSurveyList);
+  const handleEditingSurveyInList = async (surveyToEdit) => {
+    const surveyRef = doc(db, "surveys", surveyToEdit.id);
+    await updateDoc(surveyRef, surveyToEdit);
     setEditing(false);
     setSelectedSurvey(null);
   }
@@ -85,28 +77,17 @@ function ControlView() {
     setRespond(true);
   }
 
-  const handleSubmittingResponse = (responseToSubmit) => {
+  const handleSubmittingResponse = (newResponse) => {
     const newMainResponseList = mainResponseList
-    .filter((response) => response.id !== selectedResponse.id)
-    .concat(responseToSubmit);
+    .concat(newResponse);
     setMainResponseList(newMainResponseList);
     setRespond(false);
-    setSelectedResponse(null);
+    setDashboardDisplay(true);
   }
 
-  // const handleRespondingToSurveyInList = (surveyToRespond) => {
-  //   const repondedMainSurveyList = mainSurveyList
-  //   .filter((survey) => survey.id !== selectedSurvey.id)
-  //   .concat(surveyToRespond);
-  //   setMainSurveyList(repondedMainSurveyList);
-  //   setEditing(false);
-  //   setSelectedSurvey(null);
-  // }
-
-  const handleAddingNewSurveyToList = (newSurvey) => {
-    const newMainSurveyList = mainSurveyList.concat(newSurvey);
-    setMainSurveyList(newMainSurveyList);
-    setFormVisibleOnPage(false)
+  const handleAddingNewSurveyToList = async (newSurveyData) => {
+    await addDoc(collection(db, "surveys"), newSurveyData);
+    setFormVisibleOnPage(false);
   }
 
   const handleChangingSelectedSurvey = (id) => {
@@ -114,18 +95,28 @@ function ControlView() {
     setSelectedSurvey(selection);
   }
 
-  // const handleResponseList = (id) => {
-  //   const responseList = mainSurveyList.filter((survey) => survey.id === id)[0];
-  //   setResponseList(responseList);
-  // }
+  const handleReturnClick = () => {
+    setDashboardDisplay(false);
+    currentVisibleState(true);
+  }
 
   let currentVisibleState = null;
   let buttonText = null;
-  // if (error) {
-  //   currentVisibleState = <p>There was an error: {error}</p>
-  // } else 
-  if (editing) {
+  if (error) {
+    currentVisibleState = <p>There was an error: {error}</p>
+  } 
+  else if (editing) {
     currentVisibleState = <EditSurveyForm survey = {selectedSurvey} onEditSurvey = {handleEditingSurveyInList} />
+    buttonText = "Return to Survey List";
+  }
+  else if (respond) {
+    currentVisibleState = <ResponseForm 
+    survey = { selectedSurvey } response = {selectedResponse} 
+    onSubmitResponse = { handleSubmittingResponse }/>
+    buttonText = "Go to Dashboard";
+  }
+  else if (dashboardDisplay) {
+    currentVisibleState = <Dashboard surveyList={mainSurveyList} responseList={mainResponseList} onClickReturn={handleReturnClick} />
     buttonText = "Return to Survey List";
   }
   else if (selectedSurvey != null) {
@@ -135,17 +126,7 @@ function ControlView() {
   else if (formVisibleOnPage) {
     currentVisibleState = <NewSurveyForm onNewSurveyCreation={handleAddingNewSurveyToList} />
     buttonText = "Return to Survey List";
-  } 
-  else if (respond) {
-    currentVisibleState = <ResponseForm response = {selectedResponse} onSubmitResponse = { handleSubmittingResponse }/>
-    buttonText = "Return to Survey List";
   }
-  // else if (dashboardDisplay) {
-  //   currentVisibleState = //<Dashboard />
-  //   // surveyList={mainSurveyList}
-  //   //onSurveySelection={handleChangingSelectedSurvey}
-  //   buttonText = "Return to Survey List";
-  // }
   else {
     currentVisibleState = <SurveyList surveyList={mainSurveyList} onSurveySelection={handleChangingSelectedSurvey} />
     buttonText = "Add Survey";

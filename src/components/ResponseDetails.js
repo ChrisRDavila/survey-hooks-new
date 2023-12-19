@@ -8,7 +8,7 @@ function ResponseDetail(props) {
   return (
     <React.Fragment>
       <h1>Response Details</h1>
-      <h3>{survey.title}</h3>
+      <h3>{respondingToo}</h3>
       <p>{response.response1}</p>
       <p>{resposne.resposne2}</p>
       <p>{response.response3}</p>

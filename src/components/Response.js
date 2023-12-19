@@ -6,7 +6,7 @@ function Response(props) {
   return (
   <React.Fragment>
     <div onClick = {() => props.whenResponseClicked(props.id)}>
-      <h3>{survey.title}</h3>
+      <h3>{props.respondingTo}</h3>
       <p>{props.response1}</p>
       <p>{props.response2}</p>
       <p>{props.response3}</p>
@@ -15,8 +15,8 @@ function Response(props) {
   );
 }
 
-  Survey.propTypes = {
-    title: PropTypes.string,
+  Response.propTypes = {
+    respondingTo: PropTypes.string,
     response1: PropTypes.string,
     response2: PropTypes.string,
     response3: PropTypes.string,

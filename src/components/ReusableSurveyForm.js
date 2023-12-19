@@ -8,11 +8,13 @@ return (
     <input
       type='text'
       name='title'
-      placeholder='Title' />
+      placeholder='Title'
+      required />
     <input
       type='text'
       name='question1'
-      placeholder='Question 1' />
+      placeholder='Question 1'
+      required />
     <input
       type='text'
       name='question2'

@@ -9,11 +9,11 @@ function ResponseList(props) {
       <hr />
       {props.responseList.map((response) =>
         <Response
-          whenSurveyClicked = { props.onSurveySelection }
-          title={survey.title}
+          // whenSurveyClicked = { props.onSurveySelection }
+          respondingTo={response.respondingTo}
           response1={response.response1}
           response2={response.response2}
-          question3={response.response3}
+          response3={response.response3}
           id={response.id}
           key={response.id}/>
       )}
@@ -21,9 +21,9 @@ function ResponseList(props) {
   );
 }
 
-    SurveyList.propTypes = {
-      resposneList: PropTypes.array,
-      onResponseSelection: PropTypes.func
+    ResponseList.propTypes = {
+      responseList: PropTypes.array,
+      // onResponseSelection: PropTypes.func
     };
 
     export default ResponseList;
