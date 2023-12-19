@@ -5,7 +5,7 @@ import SurveyDetail from "./SurveyDetails"
 import EditSurveyForm from "./EditSurveyForm";
 import ResponseForm from "./ResponseForm";
 import Dashboard from "./Dashboard";
-import db from '../firebase';
+import { db, auth } from '../firebase';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
 
 function ControlView() {
@@ -99,6 +99,14 @@ function ControlView() {
     setDashboardDisplay(false);
     currentVisibleState(true);
   }
+
+  if (auth.currentUser == null) {
+    return (
+      <React.Fragment>
+        <h1>You must be signed in to access the surveys.</h1>
+      </React.Fragment>
+    )
+  } else if (auth.currentUser != null) {
 
   let currentVisibleState = null;
   let buttonText = null;
