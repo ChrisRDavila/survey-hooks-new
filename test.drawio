@@ -1,0 +1,114 @@
+<mxfile host="65bd71144e">
+    <diagram id="GTa_X99YytO-2TGXDlmG" name="Page-1">
+        <mxGraphModel dx="1856" dy="1147" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;App.js&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="110" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3QB0LrcZ91xJNt0meoHK-5" value="" style="edgeStyle=none;html=1;fontSize=20;" edge="1" parent="1" source="4" target="hUAHK_gQip4hpSmRXo4R-6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="User signup, login,logout" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="210" width="170" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="IbSOogveEgeAxaS2Lfkr-6" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=20;" edge="1" parent="1" source="5" target="IbSOogveEgeAxaS2Lfkr-5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Survey - create, update, delete" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="210" width="210" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="hUAHK_gQip4hpSmRXo4R-5" value="Possible Dashboard - userdash(user specific)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="205" width="210" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="hUAHK_gQip4hpSmRXo4R-6" value="Firebase Integration -&amp;nbsp;&lt;br&gt;Authentication, Database" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="390" width="230" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="IbSOogveEgeAxaS2Lfkr-5" value="Survey Filling Components - SurveyForm" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="340" y="390" width="210" height="120" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="ZzYS9BZn-N9Bjq9dqAkG" name="Page-1">
+        <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="20" width="420" height="480" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="App" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="20" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="50" width="400" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Header/Possible home for navBar&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="60" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="120" width="400" height="370" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Control" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="120" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="200" width="380" height="265" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="140" width="380" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Logins add later" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="130" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Dashboard / User" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="200" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="220" width="120" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="SurveyList" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="220" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="CreateAnswers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="410" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="220" width="120" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="NewSurvey" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="220" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="CreateSurvey" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="410" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="ViewSurveys" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="370" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="220" width="120" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="SurveyDetail&lt;br&gt;/Selected Survey" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="230" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="Update/&lt;br&gt;Delete&lt;br&gt;User Surveys" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="370" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="View all user Surveys?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="120" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="SIgnUp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="160" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="SignIn" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="160" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="SignOutButton" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="160" width="60" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
