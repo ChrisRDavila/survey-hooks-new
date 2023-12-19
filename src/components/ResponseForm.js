@@ -6,7 +6,7 @@ function ResponseForm(props){
   function handleNewResponseFormSubmission(event) {
     event.preventDefault();
     props.onNewResponseCreation({
-      selectedSurvey: event.target.selectedSurvey.value,
+      selectedResponse: event.target.selectedSurvey.value,
       response1: event.target.response1.value,
       response2: event.target.response2.value,
       response3: event.target.response3.value,
@@ -16,11 +16,11 @@ function ResponseForm(props){
   return (
     <React.Fragment>
       <form onSubmit={handleNewResponseFormSubmission}>
-        {/* <select name='selectedSurvey'>
+        <select name='selectedSurvey'>
           {props.surveyList.map((survey, index) =>
             <option value={survey.id} key={index}>{survey.title}</option>
           )}
-        </select> */}
+        </select>
         <input
           type='text'
           name='response1'
@@ -38,3 +38,10 @@ function ResponseForm(props){
     </React.Fragment>
   );
 }
+
+ResponseForm.propTypes = {
+  handleNewResponseFormSubmission: PropTypes.func,
+  // buttonText: PropTypes.string
+}
+
+export default ResponseForm;

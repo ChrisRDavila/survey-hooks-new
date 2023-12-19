@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function SurveyDetail(props) {
-  const { survey, onClickingDelete, onClickingEdit } = props;
+  const { survey, onClickingDelete, onClickingEdit, onClickingRespond } = props;
   return (
     <React.Fragment>
       <h1>Survey Details</h1>
@@ -12,6 +12,7 @@ function SurveyDetail(props) {
       <p>{survey.question3}</p>
       <button onClick={ onClickingEdit }>Update Survey</button>
       <button onClick={()=> onClickingDelete(survey.id) }>Delete Survey</button>
+      <button onCLick={()=> onClickingRespond(survey.id) }>Take Survey</button>
       <hr />
     </React.Fragment>
   );
@@ -20,7 +21,8 @@ function SurveyDetail(props) {
 SurveyDetail.propTypes = {
   survey: PropTypes.object,
   onClickingDelete: PropTypes.func,
-  onClickingEdit: PropTypes.func
+  onClickingEdit: PropTypes.func,
+  onClickingRespond: PropTypes.func
 };
 
 export default SurveyDetail;

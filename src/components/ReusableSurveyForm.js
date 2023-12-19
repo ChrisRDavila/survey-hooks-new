@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function ReusableForm(props) {
+function ReusableSurveyForm(props) {
 return (
   <React.Fragment>
   <form onSubmit={props.formSubmissionHandler}>
@@ -27,9 +27,9 @@ return (
   );
 }
 
-ReusableForm.propTypes = {
+ReusableSurveyForm.propTypes = {
   formSubmissionHandler: PropTypes.func,
   buttonText: PropTypes.string
 }
 
-export default ReusableForm;
+export default ReusableSurveyForm;
