@@ -12,7 +12,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/" element={<ViewControl />} />
+        <Route path="/" element={<ControlView />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>

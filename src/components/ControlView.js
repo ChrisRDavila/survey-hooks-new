@@ -22,7 +22,7 @@ function ControlView() {
 
   useEffect(() => { 
     const unSubscribe = onSnapshot(
-      collection(db, "tickets"), 
+      collection(db, "surveys"), 
       (collectionSnapshot) => {
         const surveys = [];
         collectionSnapshot.forEach((doc) => {
@@ -100,6 +100,8 @@ function ControlView() {
     currentVisibleState(true);
   }
 
+  let currentVisibleState = null;
+
   if (auth.currentUser == null) {
     return (
       <React.Fragment>
@@ -146,7 +148,7 @@ function ControlView() {
           <button onClick={handleClick}>{buttonText}</button>
         </React.Fragment>
     );
-    
+  } 
 }
 
 export default ControlView;
