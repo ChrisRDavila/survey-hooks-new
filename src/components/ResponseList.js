@@ -9,7 +9,7 @@ function ResponseList(props) {
       <hr />
       {props.responseList.map((response) =>
         <Response
-          // whenSurveyClicked = { props.onSurveySelection }
+          whenResponseClicked = { props.onResponseSelection }
           respondingTo={response.respondingTo}
           response1={response.response1}
           response2={response.response2}
@@ -23,7 +23,7 @@ function ResponseList(props) {
 
     ResponseList.propTypes = {
       responseList: PropTypes.array,
-      // onResponseSelection: PropTypes.func
+      onResponseSelection: PropTypes.func
     };
 
     export default ResponseList;

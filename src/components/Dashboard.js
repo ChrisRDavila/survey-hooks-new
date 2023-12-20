@@ -2,15 +2,17 @@ import React from 'react';
 import Survey from './Survey';
 import Response from './Response';
 import PropTypes from 'prop-types';
+// import ResponseList from './ResponseList';
 
 function Dashboard(props) {
-  const { onClickingReturn } = props;
+  // const { onSelectingResponse } = props;
   
 
   return (
     <React.Fragment>
       <hr />
-      {props.surveyList.map((survey) =>
+      <h1>Your Surveys:</h1>
+      {Array.isArray(props.surveyList) && props.surveyList.map((survey) =>
         <Survey
           title={survey.title}
           question1={survey.question1}
@@ -19,24 +21,29 @@ function Dashboard(props) {
           id={survey.id}
           key={survey.id}/>
       )}
+      <h1>Your Responses</h1>
       <hr />
-      {props.responseList.map((response) =>
+      {Array.isArray(props.responseList) && props.responseList.map((response) =>
         <Response
+        whenResponseClicked={props.onResponseSelection}
         respondingTo={response.respondingTo}
         response1={response.response1}
         response2={response.response2}
         response3={response.response3}
         id={response.id}
-        key={response.id}/>
+        key={response.id}
+        />
       )}
-      <button onClick={()=> onClickingReturn }></button>
+      {/* <button onClick={()=> onBackToSurveyDetail }></button> */}
+      {/* <button onClick={()=> onSelectingResponse }></button> */}
     </React.Fragment>
   )
 }
 
 Dashboard.propTypes = {
   surveyList: PropTypes.array,
-  responseList: PropTypes.array
+  responseList: PropTypes.array,
+  onSelectingResponse: PropTypes.func,
 }
 
 export default Dashboard;

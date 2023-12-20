@@ -3,6 +3,7 @@ import Survey from './Survey';
 import PropTypes from 'prop-types';
 
 function SurveyList(props) {
+  // const { onClickingDashboard } = props;
   
   return (
     <React.Fragment>
@@ -17,13 +18,15 @@ function SurveyList(props) {
           id={survey.id}
           key={survey.id}/>
       )}
+      {/* <button onClick={()=> onClickingDashboard() }>Go to Dashboard</button> */}
       </React.Fragment>
   );
 }
 
     SurveyList.propTypes = {
       surveyList: PropTypes.array,
-      onSurveySelection: PropTypes.func
+      onSurveySelection: PropTypes.func,
+      // onClickingDashboard: PropTypes.func
     };
 
     export default SurveyList;
