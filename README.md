@@ -1,6 +1,6 @@
 # survey-hooks-new
 
-refactor help-queue repo to use hooks and noSql as database
+refactor of old repo to attempt different way of setting on noSQL surveyfor react with hooks
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
