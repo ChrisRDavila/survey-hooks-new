@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# survey-hooks-new
+
+refactor help-queue repo to use hooks and noSql as database
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
